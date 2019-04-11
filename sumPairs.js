@@ -1,3 +1,8 @@
+/* Assumptions
+  1. arr will only contain positive integers
+  2. arr will never be empty and will contain at least two numbers
+*/
+
 const sumPairs = (arr, targetValue) => {
   // instantiate cache
   const cache = new Map()
@@ -6,6 +11,7 @@ const sumPairs = (arr, targetValue) => {
 
   arr.forEach(num => {
     // if the number doesn't exist in our cache, let's add it
+    // we'll need to check against our cache for our missing number later
     if (!cache[num]) {
       cache.set(num, num)
     }
@@ -16,9 +22,9 @@ const sumPairs = (arr, targetValue) => {
     const missingNumber = targetValue - num
 
     // if the missing number is in our cache, return it along with the current num
-    // we've found our pair! :)
     if (cache.has(missingNumber)) {
       const match = cache.get(missingNumber)
+      // we've found our pair! :)
       results.push([match, num])
     }
   })
