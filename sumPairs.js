@@ -1,6 +1,12 @@
-/* Assumptions
-  1. arr will only contain positive integers
-  2. arr will never be empty and will contain at least two numbers
+/*
+  Given a list of numbers and a target value,
+  find all pairs of numbers that equal the target value when summed
+
+  Example: sumPairs([0, 9, 2, 4, 5, 1, 8], 9)  => [ [0, 9], [4, 5], [1, 8] ]
+
+    I. Assumptions
+      1. arr will only contain positive integers
+      2. arr will never be empty and will contain at least two numbers
 */
 
 const sumPairs = (arr, targetValue) => {
